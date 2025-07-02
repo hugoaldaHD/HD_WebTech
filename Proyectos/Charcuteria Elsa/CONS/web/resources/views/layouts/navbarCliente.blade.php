@@ -26,8 +26,7 @@
 
     {{-- GENERAL --}}
         {{-- JS --}}
-        <script src="{{ asset('js/cliente/listar_paquetes.js') }}"></script>
-        <script src="{{ asset('js/cliente/listar_anuncios.js') }}"></script>
+
         {{-- CSS --}}
         <link href="{{ asset('css/cliente.css') }}" rel="stylesheet">
         <!-- bootstrap -->
@@ -36,7 +35,10 @@
         <!-- Fontawesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-dark">
+<body class="fondo">
+    <div class="redes">
+        <h1 class="marquee"><i class="fa-brands fa-whatsapp"></i> Whatsapp: 655 23 11 87ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<i class="fa-brands fa-instagram"></i> Instagram: xarcuteriaelsa</h1>
+    </div>
     <div class="body-wrapper">
 
         <!-- navbar -->

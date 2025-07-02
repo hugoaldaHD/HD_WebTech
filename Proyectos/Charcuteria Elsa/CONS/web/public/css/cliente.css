@@ -20,7 +20,7 @@ html, body {
 
 /* Navbar */
 .navbar {
-    background-color: #90214D;
+    background-color: #480B23;
     border-bottom: 2px solid #FB68A2;
 }
 
@@ -28,6 +28,7 @@ html, body {
     font-weight: bold;
     color: white;
     font-size: 1.5rem;
+    text-decoration: none;
 }
 
 /* Botón principal */
@@ -88,7 +89,7 @@ html, body {
 
 /* Footer */
 footer {
-    background-color: #90214D;
+    background-color: #480B23;
     color: #cfd8e3;
     border-top: 2px solid #FB68A2;
 }
@@ -286,4 +287,34 @@ textarea.form-control:focus {
     display: flex;
     justify-content: flex-end;
     gap: 0.75rem;
+}
+
+.redes {
+    height: 30px;
+    background-color: #FFB2D0;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+.redes .marquee {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll 10s linear infinite;
+    font-size: 1.5rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.fondo {
+    color: black;
+    background-color: #D9D9D9;
 }
