@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Css -->
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <!-- Js -->
+    <script src="{{ asset('js/admin/listar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/crear_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/editar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/eliminar_paquetes.js') }}"></script>
+    <script src="{{ asset('js/admin/listar_anuncios.js') }}"></script>
+    <!-- csrf token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Icono y título -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('icons/admin.svg') }}">
+    <title>Dashboard Admin</title>
+</head>
+<body>
+    <div class="body-wrapper">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="{{ route('novedades') }}">Xarcutería Elsa</a>
+            </div>
+        </nav>
+
+        <!-- contenido principal -->
+        <div class="container py-5 main-content">
+            @yield('content')
+        </div>
+
+        <!-- footer -->
+        <footer class="text-white mt-auto">
+            <div class="container py-4 text-center">
+                <p class="mb-1">© {{ date('Y') }} Xarcutería Elsa. Todos los derechos reservados.</p>
+                <small>Desarrollado por H&D WebTech | <a class="text-white">Contáctanos</a></small>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
