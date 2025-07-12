@@ -129,6 +129,9 @@ form {
 form label {
   font-weight: bold;
   text-align: left;
+  display: block;       /* Añadido */
+  margin-bottom: 0.5em; /* Añadido para separar del input */
+  color: #333;          /* Para igualar color */
 }
 
 form input, form textarea, form select {
