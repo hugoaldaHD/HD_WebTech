@@ -22,7 +22,7 @@ class ContactoMail extends Mailable
         $asuntoCompleto = $this->datos['asunto'] . ' - ' . $this->datos['servicio'];
 
         return $this->subject($asuntoCompleto)
-                    ->view('contacto')
+                    ->view('contacto.enviar')
                     ->with('datos', $this->datos);
     }
 }
