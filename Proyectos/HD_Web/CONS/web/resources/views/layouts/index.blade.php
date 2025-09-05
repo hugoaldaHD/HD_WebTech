@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WebPro - Soluciones Web</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>WebPro - Soluciones Web</title>
 </head>
 <body>
     <header>
-        <h1>WebPro</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ route('servicios') }}">Servicios</a></li>
-                <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
-                <li><a href="{{ route('contacto') }}">Contacto</a></li>
-            </ul>
+        <h1><a href="{{ route('home') }}">WebPro</a></h1>
+        <nav class="nav justify-content-center">
+            <a href="{{ route('servicios') }}" class="nav-link {{ request()->routeIs('servicios') ? 'active' : '' }}">Servicios</a>
+            <a href="{{ route('nosotros') }}" class="nav-link {{ request()->routeIs('nosotros') ? 'active' : '' }}">Nosotros</a>
+            <a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
+            <a href="{{ route('contacto') }}" class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}">Contacto</a>
         </nav>
     </header>
 
-    <!-- <section class="hero">
-        <h2>Diseñamos tu presencia online</h2>
-        <p>Desarrollamos páginas web modernas y efectivas para tu negocio.</p>
-        <a href="#contacto" class="btn">Solicita tu web</a>
-    </section> -->
-
     @yield('content')
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 WebPro. Todos los derechos reservados.</p>
+        <p>&copy; 2025 WebPro - Todos los derechos reservados</p>
+        <p>
+          <a href="#" style="color:#fff; margin:0 10px;">Twitter</a> |
+          <a href="#" style="color:#fff; margin:0 10px;">Instagram</a> |
+          <a href="#" style="color:#fff; margin:0 10px;">LinkedIn</a>
+        </p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

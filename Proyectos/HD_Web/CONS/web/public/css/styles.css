@@ -1,11 +1,20 @@
 /* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
   color: #333;
   background-color: #f4f6f8;
   line-height: 1.6;
+}
+
+main {
+  flex: 1; /* El contenido ocupa el espacio disponible */
 }
 
 /* Header */
@@ -22,25 +31,54 @@ header h1 {
   font-size: 2.5em;
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 1em 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 2em;
+header h1 a {
+  color: white;
+  text-decoration: none;
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
+/* Navigation */
+.nav {
+  margin-top: 20px;
+  position: relative;
+}
+
+.nav a {
+  color: white;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+.nav-link {
+  position: relative;
+  color: white;
   font-weight: 600;
+  text-decoration: none;
+  margin: 0 1em;
+  padding: 0.5em 0;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #ffd500;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: white; /* barra amarilla */
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: white;
 }
 
 /* Hero Section */
@@ -66,21 +104,6 @@ nav ul li a:hover {
 .hero .btn {
   position: relative;
   z-index: 1;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #0d6efd;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #0056d2;
 }
 
 /* Sections */
@@ -129,9 +152,9 @@ form {
 form label {
   font-weight: bold;
   text-align: left;
-  display: block;       /* Añadido */
-  margin-bottom: 0.5em; /* Añadido para separar del input */
-  color: #333;          /* Para igualar color */
+  display: block;
+  margin-bottom: 0.5em;
+  color: #333;
 }
 
 form input, form textarea, form select {
@@ -175,7 +198,7 @@ footer {
   color: white;
   text-align: center;
   padding: 2em 1em;
-  margin-top: 4em;
+  margin-top: auto;
   font-size: 0.9em;
   letter-spacing: 0.5px;
 }

@@ -8,16 +8,6 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactoController extends Controller
 {
-    public function servicios()
-    {
-        return view('servicios.index');
-    }
-
-    public function portfolio()
-    {
-        return view('portfolio.index');
-    }
-
     public function contacto()
     {
         return view('contacto.index');

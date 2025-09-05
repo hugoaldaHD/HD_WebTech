@@ -2,12 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NosotrosController;
 
 Route::get('/', function () {
-    return view('layouts.index');
+    return view('home.index');
 });
 
-Route::get('/servicios', [ContactoController::class, 'servicios'])->name('servicios');
-Route::get('/portfolio', [ContactoController::class, 'portfolio'])->name('portfolio');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/servicios', [ServiciosController::class, 'servicios'])->name('servicios');
+Route::get('/nosotros', [NosotrosController::class, 'nosotros'])->name('nosotros');
+Route::get('/portfolio', [PortfolioController::class, 'portfolio'])->name('portfolio');
 Route::get('/contacto', [ContactoController::class, 'contacto'])->name('contacto');
 Route::post('/contacto/enviar', [ContactoController::class, 'enviar'])->name('enviar');
