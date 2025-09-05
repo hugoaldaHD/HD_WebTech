@@ -34,19 +34,14 @@
         <h2>Nuestro Equipo</h2>
         <div class="cards">
             <div class="card">
-                <h3>Ana Gómez</h3>
-                <p><em>CEO & Fundadora</em></p>
-                <p>Apasionada por el diseño y la estrategia digital. Lidera el equipo con visión y energía.</p>
+                <h3>Hugo Alda</h3>
+                <p><em>CEO & Fundador</em></p>
+                <p>Especialista en Laravel, JavaScript y optimización de rendimiento web. Lidera el equipo con visión y energía.</p>
             </div>
             <div class="card">
-                <h3>David López</h3>
-                <p><em>Desarrollador Full Stack</em></p>
-                <p>Especialista en Laravel, JavaScript y optimización de rendimiento web.</p>
-            </div>
-            <div class="card">
-                <h3>Laura Martínez</h3>
-                <p><em>Diseñadora UX/UI</em></p>
-                <p>Convierte ideas en interfaces atractivas y fáciles de usar.</p>
+                <h3>Dylan Castles</h3>
+                <p><em>CEO & Fundador</em></p>
+                <p>Especialista en Laravel, JavaScript y optimización de rendimiento web. Apasionado por el diseño y la estrategia digital.</p>
             </div>
         </div>
     </section>

@@ -6,12 +6,14 @@ use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\CarritoController;
 
 Route::get('/', function () {
     return view('home.index');
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/carrito', [CarritoController::class, 'carrito'])->name('carrito');
 Route::get('/servicios', [ServiciosController::class, 'servicios'])->name('servicios');
 Route::get('/nosotros', [NosotrosController::class, 'nosotros'])->name('nosotros');
 Route::get('/portfolio', [PortfolioController::class, 'portfolio'])->name('portfolio');

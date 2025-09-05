@@ -81,6 +81,59 @@ header h1 a {
   color: white;
 }
 
+/*  */
+
+.nav-servicios {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center; /* centra los elementos horizontalmente */
+  gap: 2em; /* espacio entre los tabs */
+  list-style: none;
+  padding: 0;
+}
+
+.nav-servicios li {
+  display: flex; /* cada li contendrá su button centrado */
+}
+
+.nav-servicios-link {
+  position: relative;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5em 0;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-servicios-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: black;
+  transition: width 0.3s;
+}
+
+.nav-servicios-link:hover::after,
+.nav-servicios-link.active::after {
+  width: 100%;
+}
+
+.nav-servicios-link:hover,
+.nav-servicios-link.active {
+  color: black;
+}
+
+/*  */
+
 /* Hero Section */
 .hero {
   background: url('https://source.unsplash.com/1600x600/?technology,design') no-repeat center center/cover;
