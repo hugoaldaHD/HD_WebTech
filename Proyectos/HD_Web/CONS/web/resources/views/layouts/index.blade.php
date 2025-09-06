@@ -16,7 +16,11 @@
             <a href="{{ route('nosotros') }}" class="nav-link {{ request()->routeIs('nosotros') ? 'active' : '' }}">Nosotros</a>
             <a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
             <a href="{{ route('contacto') }}" class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}">Contacto</a>
-            <a href="{{ route('carrito') }}" class="nav-link {{ request()->routeIs('carrito') ? 'active' : '' }}"><i class="fa-solid fa-cart-shopping" style="color: white;"></i></a>
+            <a href="{{ route('carrito') }}" class="nav-link {{ request()->routeIs('carrito') ? 'active' : '' }}">
+                <i class="fa-solid fa-cart-shopping" style="color: white; position:relative;">
+                    <span id="cart-count" class="badge bg-danger rounded-pill" style="position:absolute; top:-10px; right:-15px; font-size:0.7rem;"></span>
+                </i>
+            </a>
         </nav>
     </header>
 
@@ -31,6 +35,54 @@
           <a href="#" style="color:#fff; margin:0 10px;">LinkedIn</a>
         </p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const botones = document.querySelectorAll('.card .btn-success');
+            const cartCount = document.getElementById('cart-count');
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+            // Actualizar contador al cargar
+            actualizarContador();
+        
+            botones.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = btn.closest('.card');
+                
+                    const nombre = card.querySelector('.card-title').innerText;
+                    const precio = card.querySelector('.card-subtitle').innerText;
+                    const soporteElem = card.querySelector('p strong') 
+                        ? card.querySelector('p strong').parentNode 
+                        : null;
+                    const soporte = soporteElem ? soporteElem.innerText : '';
+                
+                    // Obtener detalles (lista de <li>)
+                    const detalles = Array.from(card.querySelectorAll('ul li'))
+                                          .map(li => li.innerText);
+                
+                    // Crear objeto del item
+                    const item = {
+                        nombre,
+                        precio,
+                        soporte,
+                        detalles
+                    };
+                
+                    // Añadir al carrito
+                    carrito.push(item);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                
+                    actualizarContador();
+                });
+            });
+        
+            function actualizarContador() {
+                cartCount.innerText = carrito.length;
+                cartCount.style.display = carrito.length > 0 ? 'inline-block' : 'none';
+            }
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>

@@ -134,6 +134,43 @@ header h1 a {
 
 /*  */
 
+#carrito-items {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.list-group-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+.list-group-item:hover {
+  transform: scale(1.01);
+}
+
+.detalles {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0.5rem auto;
+  padding: 1rem 1.2rem;
+}
+
+.detalles ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.detalles li {
+  border: none;
+  padding-left: 0;
+}
+
+.resumen-carrito {
+  border-radius: 10px;
+  background: #fff;
+}
+
 /* Hero Section */
 .hero {
   background: url('https://source.unsplash.com/1600x600/?technology,design') no-repeat center center/cover;

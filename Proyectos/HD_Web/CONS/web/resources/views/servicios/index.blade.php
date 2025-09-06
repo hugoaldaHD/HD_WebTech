@@ -158,30 +158,5 @@
         <p id="carrito-precio"></p>
         <a id="carrito-contratar" href="/contacto" class="btn btn-success w-100">Contratar</a>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const botones = document.querySelectorAll('.card .btn-success');
-            const carrito = document.getElementById('carrito');
-            const carritoNombre = document.getElementById('carrito-nombre');
-            const carritoPrecio = document.getElementById('carrito-precio');
-            const carritoContratar = document.getElementById('carrito-contratar');
-        
-            botones.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const card = btn.closest('.card');
-                    const nombre = card.querySelector('.card-title').innerText;
-                    const precio = card.querySelector('.card-subtitle').innerText;
-                
-                    carritoNombre.innerText = nombre;
-                    carritoPrecio.innerText = precio;
-                    carrito.style.display = 'block';
-                    carritoContratar.href = btn.href;
-                });
-            });
-        });
-    </script>
-
 </section>
 @endsection

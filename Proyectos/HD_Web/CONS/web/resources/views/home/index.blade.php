@@ -5,10 +5,9 @@
 @section('content')
 
     <!-- Hero con fondo de imagen -->
-    <section class="hero text-center text-white" style="background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/img/hero-bg.jpg') center/cover no-repeat; padding:8em 2em;">
+    <section class="hero text-center text-white" style="background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/img/hero-bg.jpg') center/cover no-repeat; padding:10em 2em;">
         <h1 class="display-4 mb-3">Impulsa tu negocio al mundo digital</h1>
         <p class="lead mb-4">Creamos soluciones web modernas, creativas y efectivas</p>
-        <a href="/servicios" class="btn btn-primary btn-lg">Descubre nuestros servicios</a>
     </section>
 
     <!-- Servicios destacados -->
