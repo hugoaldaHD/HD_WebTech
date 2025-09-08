@@ -2,6 +2,15 @@
 
 @section('title', 'Portfolio')
 
+@section('breadcrumbs')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">WebPro</a></li>
+            <li class="breadcrumb-item" aria-current="page">Portfolio</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
     <section id="portafolio" class="section">
         <h2>Portfolio</h2>

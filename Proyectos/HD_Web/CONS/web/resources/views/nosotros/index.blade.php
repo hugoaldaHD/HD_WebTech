@@ -2,6 +2,15 @@
 
 @section('title', 'Nosotros')
 
+@section('breadcrumbs')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">WebPro</a></li>
+            <li class="breadcrumb-item" aria-current="page">Nosotros</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
     <section id="nosotros" class="section">
         <h2>Sobre Nosotros</h2>
