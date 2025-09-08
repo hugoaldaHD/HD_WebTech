@@ -171,6 +171,62 @@ header h1 a {
   background: #fff;
 }
 
+/* Breadcrumbs */
+
+.breadcrumb {
+  background: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* Estilos Progreso de Compra */
+
+.checkout-steps {
+  gap: 10px;
+  min-width: 1300px;
+  margin: 0 auto;
+}
+
+.checkout-steps .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+  min-width: 70px;
+}
+
+.checkout-steps .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.checkout-steps .line {
+  flex: 1;
+  height: 2px;
+  background: #e9ecef;
+  margin: 0 5px;
+}
+
+.checkout-steps .step.active .circle {
+  background: #0056d2;
+  color: #fff;
+}
+
+.checkout-steps .step.active {
+  color: #0056d2;
+  font-weight: bold;
+}
+
 /* Hero Section */
 .hero {
   background: url('https://source.unsplash.com/1600x600/?technology,design') no-repeat center center/cover;
