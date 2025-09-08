@@ -2,28 +2,38 @@
 
 @section('title', 'Carrito')
 
+@section('breadcrumbs')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">WebPro</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
-<section id="carrito" class="section carrito container">
-    <h2 class="mb-4">Tu Carrito</h2>
+
+@include('checkout.partials.steps', ['step' => 1])
+
+<!-- Sección carrito -->
+<section id="carrito" class="container my-5">
     <div class="row">
-        
-        <!-- Columna izquierda: Items -->
+        <!-- Productos -->
         <div class="col-lg-8">
+            <h2 class="mb-4">Mi cesta</h2>
             <div class="list-group" id="carrito-items"></div>
         </div>
-
-        <!-- Columna derecha: Resumen -->
+        <!-- Resumen compra -->
         <div class="col-lg-4">
             <div class="card shadow-sm p-3 resumen-carrito">
                 <h5 class="mb-3">Resumen de tu pedido</h5>
                 <div id="carrito-total" class="fw-bold fs-5 text-success mb-3"></div>
                 <ul id="carrito-resumen" class="list-unstyled small mb-3"></ul>
-                <a href="{{ route('contacto') }}" class="btn btn-primary w-100">
+                <a href="{{ route('carrito.direccion') }}" class="btn btn-primary w-100">
                     Continuar con la compra
                 </a>
             </div>
         </div>
-
     </div>
 </section>
 
@@ -81,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             carritoItems.appendChild(row);
 
-            // añadir al resumen
+            // resumen
             const resumenItem = document.createElement('li');
             resumenItem.textContent = `${item.nombre} - ${item.precio}`;
             carritoResumen.appendChild(resumenItem);
@@ -91,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartCount.innerText = carrito.length;
         cartCount.style.display = 'inline-block';
 
-        // Botones eliminar
+        // eliminar
         document.querySelectorAll('.eliminar').forEach(btn => {
             btn.addEventListener('click', () => {
                 const index = btn.getAttribute('data-index');
@@ -101,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Botones ver detalles
+        // ver detalles
         document.querySelectorAll('.ver-detalles').forEach(btn => {
             btn.addEventListener('click', () => {
                 const index = btn.getAttribute('data-index');

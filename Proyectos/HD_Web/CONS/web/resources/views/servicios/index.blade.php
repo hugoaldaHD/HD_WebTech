@@ -2,6 +2,15 @@
 
 @section('title', 'Servicios')
 
+@section('breadcrumbs')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" id="breadcrumb-list">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">WebPro</a></li>
+            <li class="breadcrumb-item" aria-current="page">Servicios</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('content')
 <section id="servicios" class="section">
     <h2 class="text-center mb-5">Servicios</h2>
@@ -42,7 +51,7 @@
                         <p class="mb-1"><strong>Soporte:</strong> 1 mes gratuito</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio: $100</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
                 <!-- Web Corporativa -->
@@ -61,7 +70,7 @@
                         <p class="mb-1"><strong>Soporte:</strong> 2 meses gratuitos</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio: $250</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
                 <!-- Web Personalizada -->
@@ -80,7 +89,7 @@
                         <p class="mb-1"><strong>Soporte:</strong> 3 meses gratuitos</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio a partir de: $400</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
             </div>
@@ -106,7 +115,7 @@
                         <p class="me-2"><strong>Soporte:</strong> 1 mes gratuito</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio: $350</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
                 <!-- Avanzada -->
@@ -125,7 +134,7 @@
                         <p class="mb-1"><strong>Soporte:</strong> 2 meses gratuitos</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio: $550</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
                 <!-- A medida -->
@@ -144,7 +153,7 @@
                         <p class="mb-1"><strong>Soporte:</strong> 3 meses gratuitos</p>
                         <h6 class="card-subtitle mb-3"><strong>Precio a partir de: $750</strong></h6>
                     </div>
-                    <a href="/contacto" class="btn btn-success">Contratar ahora</a>
+                    <a href="/carrito" class="btn btn-success">Contratar ahora</a>
                 </div>
 
             </div>
@@ -156,7 +165,32 @@
         <h5>Servicio seleccionado:</h5>
         <p id="carrito-nombre"></p>
         <p id="carrito-precio"></p>
-        <a id="carrito-contratar" href="/contacto" class="btn btn-success w-100">Contratar</a>
+        <a id="carrito-contratar" href="/carrito" class="btn btn-success w-100">Contratar</a>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const breadcrumbList = document.getElementById("breadcrumb-list");
+
+        // Mostrar Diseño Web por defecto
+        actualizarBreadcrumb("Diseño Web");
+
+        // Ver cambios en los tabs
+        document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(tabBtn => {
+            tabBtn.addEventListener("shown.bs.tab", (e) => {
+                const label = e.target.innerText.trim();
+                actualizarBreadcrumb(label);
+            });
+        });
+
+        function actualizarBreadcrumb(label) {
+            breadcrumbList.innerHTML = `
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">WebPro</a></li>
+                <li class="breadcrumb-item"><a>Servicios</a></li>
+                <li class="breadcrumb-item active" aria-current="page">${label}</li>
+            `;
+        }
+    });
+</script>
 @endsection
