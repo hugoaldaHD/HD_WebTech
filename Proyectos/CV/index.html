@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Portfolio | Hugo Alda Cárdenas</title>
 </head>
@@ -13,8 +14,12 @@
 
     <!-- coloca esto justo dentro de <body> -->
     <svg class="waves-svg" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
-      <path class="wave wave-1" d="M0,160L48,138.7C96,117,192,75,288,74.7C384,75,480,117,576,149.3C672,181,768,203,864,181.3C960,160,1056,96,1152,74.7C1248,53,1344,75,1392,85.3L1440,96L1440,0L0,0Z" fill="#3b82f6" fill-opacity="0.20"></path>
-      <path class="wave wave-2" d="M0,200L48,170C96,140,192,80,288,66.7C384,53,480,83,576,117.3C672,152,768,176,864,154.7C960,133,1056,75,1152,69.3C1248,64,1344,112,1392,136L1440,160L1440,0L0,0Z" fill="#60a5fa" fill-opacity="0.14"></path>
+        <path class="wave wave-1"
+            d="M0,160L48,138.7C96,117,192,75,288,74.7C384,75,480,117,576,149.3C672,181,768,203,864,181.3C960,160,1056,96,1152,74.7C1248,53,1344,75,1392,85.3L1440,96L1440,0L0,0Z"
+            fill="#3b82f6" fill-opacity="0.20"></path>
+        <path class="wave wave-2"
+            d="M0,200L48,170C96,140,192,80,288,66.7C384,53,480,83,576,117.3C672,152,768,176,864,154.7C960,133,1056,75,1152,69.3C1248,64,1344,112,1392,136L1440,160L1440,0L0,0Z"
+            fill="#60a5fa" fill-opacity="0.14"></path>
     </svg>
 
     <!-- Header -->
@@ -46,8 +51,11 @@
     <section id="about">
         <h2>Sobre mí</h2>
         <p>
-            Soy un estudiante apasionado por la programación, con gran interés en el desarrollo de páginas web.
-            Me caracteriza mi motivación constante por aprender y mejorar mis habilidades técnicas.
+            Soy un estudiante apasionado por la programación, con gran interés en el desarrollo
+            de paginas web. Me caracterizo por mi motivación constante para seguir
+            aprendiendo y mejorar mis habilidades técnicas. Busco oportunidades que me
+            permitan crecer profesionalmente, aportar creatividad y aplicar mis conocimientos
+            en proyectos reales.
         </p>
     </section>
 
@@ -56,12 +64,21 @@
         <h2>Experiencia Laboral</h2>
         <div class="card-list">
             <div class="card">
-                <h3>Dual DAW - GEPROM</h3>
-                <p>Marzo 2024 - Abril 2025</p>
+                <h3>FCTS SMX 2 - Jesuïtas Sant Gervasi</h3>
+                <p class="date">Enero 2022 - Mayo 2022</p>
+                <ul>
+                    <li>Soporte técnico a alumnos y profesorado.</li>
+                    <li>Mantenimiento de equipos.</li>
+                    <li>Gestión básica de sistemas Windows.</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>FCTS SMR - Jesuïtas Sant Gervasi</h3>
-                <p>Enero 2022 - Mayo 2022</p>
+                <h3>FCTS Duales DAW 2 - GEPROM</h3>
+                <p class="date">Marzo 2024 - Abril 2025</p>
+                <ul>
+                    <li>Automatización de procesos industriales con software interno.</li>
+                    <li>Trabajo en equipo siguiendo metodologías ágiles (Scrum).</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -69,18 +86,30 @@
     <!-- Estudios -->
     <section id="studies">
         <h2>Formación Académica</h2>
-        <div class="card-list">
-            <div class="card">
-                <h3>CFGS DAW</h3>
-                <p>2024 - 2025 | Jesuïtas Bellvitge</p>
+        <div class="timeline-horizontal">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>CFGM SMX</h3>
+                    <p>2021 - 2023 | Jesuïtas Bellvitge</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>CFGS ASIR</h3>
-                <p>2023 - 2024 | Jesuïtas Bellvitge</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>CFGS ASIX 1</h3>
+                    <p>2023 - 2024 | Jesuïtas Bellvitge</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>CFGM SMR</h3>
-                <p>2021 - 2023 | Jesuïtas Bellvitge</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>CFGS DAW 2</h3>
+                    <p>2024 - 2025 | Jesuïtas Bellvitge</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>CFGS ASIX 2</h3>
+                    <p>Actualmente | Jesuïtas Bellvitge</p>
+                </div>
             </div>
         </div>
     </section>
@@ -88,23 +117,30 @@
     <!-- Habilidades -->
     <section id="skills">
         <h2>Habilidades Técnicas</h2>
-        <div class="skills-list">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>PHP (Laravel)</span>
-            <span>MySQL</span>
-            <span>Git/GitHub</span>
-            <span>Linux & Windows</span>
-            <span>Docker</span>
+        <div class="skills-list" style="color: white;">
+            <span><i class="fa-brands fa-html5"></i> HTML</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-brands fa-laravel"></i> PHP (Laravel)</span>
+            <span><i class="fa-solid fa-database"></i> MySQL</span>
+            <span><i class="fa-solid fa-database"></i> PhpMyAdmin</span>
+            <span><i class="fa-brands fa-git-alt"></i> Git/GitHub</span>
+            <span><i class="fa-brands fa-linux"></i> Linux</span>
+            <span><i class="fa-brands fa-windows"></i> Windows</span>
+            <span><i class="fa-brands fa-docker"></i> Docker</span>
+            <span><i class="fa-solid fa-cube"></i> VirtualBox</span>
+            <span><i class="fa-solid fa-server"></i> VMware</span>
+            <span><i class="fa-solid fa-list-check"></i> Sprints</span>
+            <span><i class="fa-solid fa-people-group"></i> Scrums</span>
         </div>
+
         <h2 style="margin-top:140px;">Habilidades Personales</h2>
-        <div class="skills-list">
-            <span>Trabajo en equipo</span>
-            <span>Adaptabilidad</span>
-            <span>Gestión del tiempo</span>
-            <span>Organización</span>
-            <span>Documentación clara</span>
+        <div class="skills-list" style="color: white;">
+            <span><i class="fa-solid fa-users"></i> Trabajo en equipo</span>
+            <span><i class="fa-solid fa-person-walking"></i> Adaptabilidad</span>
+            <span><i class="fa-solid fa-clock"></i> Gestión del tiempo</span>
+            <span><i class="fa-solid fa-folder-open"></i> Organización</span>
+            <span><i class="fa-solid fa-file-alt"></i> Documentación clara</span>
         </div>
     </section>
 
