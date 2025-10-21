@@ -16,11 +16,11 @@
             <a href="{{ route('nosotros') }}" class="nav-link {{ request()->routeIs('nosotros') ? 'active' : '' }}">Nosotros</a>
             <a href="{{ route('portfolio') }}" class="nav-link {{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a>
             <a href="{{ route('contacto') }}" class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}">Contacto</a>
-            <!-- <a href="{{ route('carrito') }}" class="nav-link {{ request()->routeIs('carrito') ? 'active' : '' }}">
+            <a href="{{ route('carrito') }}" class="nav-link {{ request()->routeIs('carrito') ? 'active' : '' }}">
                 <i class="fa-solid fa-cart-shopping" style="color: white; position:relative;">
                     <span id="cart-count" class="badge bg-danger rounded-pill" style="position:absolute; top:-10px; right:-15px; font-size:0.7rem;"></span>
                 </i>
-            </a> -->
+            </a>
         </nav>
     </header>
 
